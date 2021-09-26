@@ -1,5 +1,6 @@
 import express from 'express';
 import passport from 'passport';
+
 const router = express.Router();
 
 /**
@@ -7,7 +8,7 @@ const router = express.Router();
  * invoking the local strategy.
  * if no error && a matcing user is found => user is logged in
  */
-router.post('/register_login', (req, res, next) => {
+router.post('/register', (req, res, next) => {
     passport.authenticate('local', function (err, user, info) {
         if (err) {
             return res
